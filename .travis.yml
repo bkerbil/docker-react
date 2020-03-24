@@ -1,6 +1,6 @@
 dist: bionic
 os: linux
-language: javascript
+language: node_js
 
 services:
   - docker
