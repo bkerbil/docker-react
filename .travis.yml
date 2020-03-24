@@ -6,7 +6,6 @@ services:
   - docker
 
 before_install:
-  - curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
   - docker build -t bkerbil/docker-react -f Dockerfile.dev .
 
 script:
