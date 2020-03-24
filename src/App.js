@@ -10,6 +10,7 @@ function App() {
                 <p> Edit <code>src/App.js</code> and save to reload. </p>
                 <p>React is good, Re-Frame is even better.</p>
                 <p>Amazon AWS Beanstalk sure is newbie friendly!</p>
+                <p>More changes to App.js.</p>
                 <a className="App-link"
                    href="https://reactjs.org"
                    target="_blank"
