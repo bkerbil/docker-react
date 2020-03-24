@@ -1,6 +1,9 @@
 dist: xenial
 os: linux
 language: node_js
+node_js:
+  - "13"
+  - "12"
 
 services:
   - docker
@@ -9,4 +12,5 @@ before_install:
   - docker build -t bkerbil/docker-react -f Dockerfile.dev .
 
 script:
+  - echo "Running tests against node $(node -v) and npm $(npm -v) ..."
   - docker run bkerbil/docker-react npm run test -- --coverage
