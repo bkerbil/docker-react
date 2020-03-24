@@ -3,7 +3,6 @@ os: linux
 language: node_js
 node_js:
   - "13"
-  - "12"
 
 services:
   - docker
@@ -14,3 +13,16 @@ before_install:
 script:
   - echo "Running tests against node $(node -v) and npm $(npm -v) ..."
   - docker run bkerbil/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-956601236526"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
